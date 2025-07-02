@@ -1,120 +1,57 @@
----
-lesson_title: Dart & Flutter Dasar hingga Menengah
-lesson_slug: dart-flutter-dasar-menengah
-keywords: [dart, flutter, mobile, cross-platform, ui, widget]
-objective: Memberikan pemahaman menyeluruh tentang bahasa Dart dan framework Flutter, mulai sintaks dasar hingga pola arsitektur aplikasi lintas-platform.
-level: beginner
----
+# Rangkuman Materi Belajar Dart
 
-# Dart
+Dart adalah bahasa pemrograman modern yang dirancang untuk efisiensi, portabilitas, dan produktivitas. Digunakan secara luas dalam pengembangan aplikasi multiplatform seperti Flutter untuk mobile dan web, Dart memiliki sintaks yang bersih dan kuat untuk membangun aplikasi UI maupun CLI. Bahasa ini mendukung paradigma OOP, null safety, serta berbagai fitur lanjutan seperti closure, asynchronous, dan modularisasi. Materi berikut dirancang agar pengguna dapat mempelajari Dart secara terstruktur, praktis, dan menyeluruh.
 
-Dart adalah bahasa pemrograman modern yang dikembangkan Google sejak 2011 untuk menyelesaikan kebutuhan UI lintas-platform dengan performa nyaris _native_. Berkat kombinasi _AOT_ (Ahead-of-Time) dan _JIT_ (Just-in-Time), Dart memungkinkan **hot-reload** saat pengembangan dan menghasilkan binary mesin efisien saat rilis.
+## Implementasi Umum Dart
 
----
-
-## 1 · Sintaks & Fitur Inti
-
-| Konsep | Contoh | Keterangan Ringkas |
-|--------|--------|--------------------|
-| Deklarasi Variabel | `var x = 10; const pi = 3.14;` | `var` tipe-inferensi, `final/const` _immutable_. |
-| Fungsi Singkat | `int add(int a, int b) => a + b;` | Arrow syntax. |
-| _Null Safety_ | `String? name;` | Compiler mencegah _null-pointer crash_. |
-| Koleksi | `List<int> nums = [1,2,3];` | `List`, `Set`, `Map` generik & literasi ringkas. |
-| Cascade | `object..method1()..method2();` | Panggilan berantai, mempercepat builder pattern. |
-| Async-Await | `var data = await fetch();` | _Futures_ bawaan tanpa kata kunci `Promise`. |
-
-> **Tips** – Gunakan mode **sound null-safety** (default Dart 3) untuk catch bug di compile-time.
+| Konteks Penggunaan       | Implementasi Umum                                     | Tool/Framework yang Mendukung   |
+|--------------------------|-------------------------------------------------------|---------------------------------|
+| **Mobile Development**   | Aplikasi Android/iOS multiplatform                   | Flutter                         |
+| **Web Development**      | Web interaktif modern dengan kompilasi ke JS         | Flutter Web, Dart Web           |
+| **CLI Tools**            | Aplikasi terminal, utilities baris perintah          | dart:io, args                   |
+| **Backend/API**          | REST API, server HTTP ringan                         | Dart Shelf, Aqueduct (deprecated)|
+| **Desain Modular**       | Manajemen paket, struktur file terpisah              | pub.dev, dart pub, import/export|
 
 ---
 
-## 2 · Flutter Fundamentals
+## Halaman 1: Sintaks Dasar Dart
+- **Topik**: `void main()`, `print()`, komentar, struktur file `.dart`
+- **Deskripsi**: Dasar pemrograman Dart dimulai dari fungsi `main()` sebagai titik awal program. Penggunaan `print()` untuk output, penulisan komentar satu dan banyak baris, serta struktur file `.dart` yang rapi memperkenalkan alur kode yang jelas.
 
-| Elemen | Contoh | Fungsi |
-|--------|--------|--------|
-| Widget | `Text('Hello')`, `Container()` | Blok UI terkecil, semuanya widget. |
-| Layout | `Row`, `Column`, `Stack`, `Flex` | Penyusunan posisi responsif. |
-| State Management | `setState`, **Provider**, Riverpod, BLoC | Mengelola perubahan UI + business logic. |
-| Routing & Navigation | `Navigator.push()` | Perpindahan halaman, _deeplink_. |
-| Theming | `ThemeData(...)` | Global color‐scheme & typography. |
+## Halaman 2: Variabel dan Tipe Data
+- **Topik**: `var`, `final`, `const`, `int`, `double`, `String`, `bool`, `dynamic`
+- **Deskripsi**: Dart adalah bahasa statis dengan dukungan type inference. Materi ini membahas penugasan variabel, perbedaan `final` dan `const`, serta tipe data dasar yang umum digunakan.
 
----
+## Halaman 3: Operasi dan Ekspresi
+- **Topik**: operator aritmatika, logika, ternary, null-aware (`??`, `??=`, `?.`)
+- **Deskripsi**: Dart mendukung berbagai ekspresi logis dan matematis. Bagian ini membahas operator dasar hingga ekspresi kondisional dan null-aware yang sering digunakan dalam pengembangan aplikasi nyata.
 
-## 3 · Tooling & Build Pipeline
+## Halaman 4: Struktur Kontrol
+- **Topik**: `if`, `switch`, `for`, `while`, `do...while`, `break`, `continue`
+- **Deskripsi**: Struktur kontrol memberikan alur dinamis dalam eksekusi program. Materi ini mencakup percabangan dan perulangan lengkap dengan implementasi praktis.
 
-| Tool | Fungsi | Highlight |
-|------|--------|-----------|
-| **Flutter CLI** | `flutter doctor`, `flutter build` | Diagnosis SDK & build multiplatform. |
-| **pub.dev** | Registry paket Dart/Flutter | 50 k+ paket (2025). |
-| `dart format` & `dart analyze` | Formatter & linter | Menjaga konsistensi kode. |
-| `melos` | Workspace monorepo multi-package | Cocok untuk proyek besar plugin + app. |
+## Halaman 5: Fungsi dan Scope
+- **Topik**: `=>` arrow function, named & optional parameters, closure, lexical scope
+- **Deskripsi**: Fungsi di Dart sangat fleksibel dengan dukungan parameter opsional dan closure. Bagian ini juga membahas ruang lingkup variabel dan bagaimana lexical scoping memengaruhi akses data dalam program.
 
----
+## Halaman 6: Struktur Data Kolektif
+- **Topik**: `List`, `Set`, `Map`, `.add()`, `.contains()`, `.forEach()`
+- **Deskripsi**: Struktur data kolektif merupakan elemen kunci dalam manajemen koleksi data. Materi ini mengeksplorasi perbedaan dan manipulasi dasar antar ketiganya.
 
-## 4 · Ekosistem Paket Populer
+## Halaman 7: Penanganan Error
+- **Topik**: `try`, `catch`, `on`, `finally`, exception custom
+- **Deskripsi**: Dart menyediakan sistem penanganan error yang ekspresif. Bagian ini menjelaskan cara menangani exception, membedakan error umum, serta membuat custom exception untuk kasus spesifik.
 
-| Kategori | Paket | Deskripsi |
-|----------|-------|-----------|
-| UI Kit | `flutter_bloc`, `riverpod`, `go_router` | Arsitektur & navigasi. |
-| HTTP/API | `dio`, `http`, `retrofit` | Client HTTP fitur lengkap + interceptors. |
-| State Persistence | `hive`, `shared_preferences` | Local storage NoSQL & key-value. |
-| Native Bridge | `camera`, `geolocator`, `permission_handler` | Akses fitur perangkat. |
+## Halaman 8: Paradigma dan Gaya Penulisan
+- **Topik**: Class-based OOP, null safety, `mixin`, `abstract class`, `typedef`
+- **Deskripsi**: Dart mengadopsi paradigma pemrograman berorientasi objek dengan fitur modern seperti null safety dan mixin. Materi ini membahas prinsip desain dan gaya penulisan kode Dart yang ringkas dan ekspresif.
 
----
+## Halaman 9: Refaktor dan Performance Dasar
+- **Topik**: modularisasi file, `dart analyze`, profiling ringan (`Stopwatch`)
+- **Deskripsi**: Refaktor meningkatkan keterbacaan dan performa. Topik ini mencakup pemisahan fungsi ke file, penggunaan linter, dan teknik profiling ringan untuk mendeteksi bottleneck.
 
-## 5 · Kelebihan Dart & Flutter
-
-1. **Hot-reload** mempercepat iterasi UI.  
-2. **Single codebase** → native iOS, Android, web, desktop.  
-3. **Sound type system** menekan bug logic.  
-4. **Rendering engine Skia** → performa & konsistensi tampilan.
-
----
-
-## 6 · Kekurangan
-
-* Ekosistem belum seluas npm/PyPI; beberapa SDK native perlu ditulis manual.  
-* Ukuran binary awal (≈ 4–7 MB) lebih besar dibanding Kotlin/Swift murni.  
-* Pasar kerja global masih lebih kecil dibanding JavaScript & Python.
+## Halaman 10: Mini-Proyek Dart
+- **Topik**: CLI tools, konversi suhu, pembaca file (dart:io)
+- **Deskripsi**: Proyek mini ini memberikan latihan langsung dengan membuat aplikasi kecil seperti konverter suhu dan pembaca file menggunakan `dart:io`. Dilengkapi dengan interaksi input/output serta struktur modular.
 
 ---
-
-## 7 · Studi Kasus Nyata
-
-| Perusahaan/Proyek | Keterangan |
-|-------------------|------------|
-| **Google Classroom** (Mobile) | Migrasi sebagian fitur ke Flutter untuk pace UI seragam. |
-| **ByteDance** - _Xianyu_ | Aplikasi e-commerce multi-platform 50 M pengguna. |
-| **BMW iDrive** | Prototipe UI infotainment menggunakan Flutter Desktop. |
-
----
-
-## 8 · Jalur Karier
-
-1. **Flutter Mobile Engineer** – membangun aplikasi lintas iOS/Android.  
-2. **Full-Stack Dart** – menggunakan `Dart Frog` / `Shelf` di backend, Flutter di front.  
-3. **Embedded UI Developer** – memanfaatkan Flutter di IoT & otomotif.
-
----
-
-## 9 · Roadmap Belajar Disarankan
-
-| Tahap | Target | Durasi |
-|-------|--------|--------|
-| Sintaks Dart + Null Safety | Variabel, fungsi, koleksi | 1 minggu |
-| Flutter UI Basics | Widget, layout | 1 minggu |
-| State Mgmt | Provider/Riverpod | 1 minggu |
-| API & JSON | Dio + model `fromJson` | 1 minggu |
-| Deployment | Play Store & App Store | 1 minggu |
-| Advanced | Animasi, testing, CI/CD | 2 minggu |
-
----
-
-### Referensi Lanjut
-
-* **Flutter Documentation** – docs.flutter.dev  
-* _Flutter Apprentice_ – kode lab raywenderlich  
-* _Pragmatic Flutter_ – PragProg 2024
-
----
-
-> ✅ **Sasaran Lesson**: Setelah menyelesaikan modul ini, pelajar dapat menulis aplikasi Flutter sederhana dengan arsitektur state-management bersih, memahami build pipeline multi-platform, dan menilai trade-off Dart vs stack lain.
